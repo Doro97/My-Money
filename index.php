@@ -12,7 +12,7 @@
 
     <div class="container">
         <div class="select" style="width: 200px; ">
-            <select class="form-select" aria-label="Default select example">
+            <select id ="ddlModels" class="form-select" aria-label="Default select example">
                 <option selected>Select Month</option>
                 <option value="Jan">January</option>
                 <option value="Feb">February</option>
@@ -29,7 +29,7 @@
             </select>
         </div>
        
-        <form action="index.php" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
             <div class="row">
                 <div class="col-md-4">
                     <h4>EQUITY</h4>
@@ -80,24 +80,23 @@
                 
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
           </form>
-          
-          <?php
-            $eallocate=$_POST["eallocate"];
-            $esip=$_POST["esip"];
-            $dchange=$_POST["echange"];
-            $dallocate=$_POST["dallocate"];
-            $dsip=$_POST["dsip"];
-            $dchange=$_POST["dchange"];
-            $gallocate=$_POST["gallocate"];
-            $gsip=$_POST["gsip"];
-            $gchange=$_POST["gchange"];
+<?php
+if(isset($_POST['submit'])){
+    $eallocate=$_POST["eallocate"];
+    $esip=$_POST["esip"];
+    $echange=$_POST["echange"];
+    $dallocate=$_POST["dallocate"];
+    $dsip=$_POST["dsip"];
+    $dchange=$_POST["dchange"];
+    $gallocate=$_POST["gallocate"];
+    $gsip=$_POST["gsip"];
+    $gchange=$_POST["gchange"];
 
-            if(isset($_POST['submit'])){
-                $eresult=($eallocate+$esip)*(1+$echange);
-                $dresult=($dallocate+$dsip)*(1+$dchange);
-                $gresult=($gallocate+$gsip)*(1+$gchange);
-                echo "Balance: ", $eresult, $dresult, $gresult;
-            }
+    $eresult=($eallocate+$esip)*(1+$echange);
+    $dresult=($dallocate+$dsip)*(1+$dchange);
+    $gresult=($gallocate+$gsip)*(1+$gchange);
+    echo "BALANCE: ", $eresult, "\t", $dresult, "\t", $gresult;
+}
 
 ?>
     </div>
