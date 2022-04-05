@@ -1,7 +1,7 @@
 <?php
     $eallocate=$_POST["eallocate"];
     $esip=$_POST["esip"];
-    $dchange=$_POST["echange"];
+    $echange=$_POST["echange"];
     $dallocate=$_POST["dallocate"];
     $dsip=$_POST["dsip"];
     $dchange=$_POST["dchange"];
@@ -13,7 +13,7 @@
         $eresult=($eallocate+$esip)*(1+$echange);
         $dresult=($dallocate+$dsip)*(1+$dchange);
         $gresult=($gallocate+$gsip)*(1+$gchange);
-        echo "Balance: ", $eresult, $dresult, $gresult;
+        echo "Balance: ", $eresult, "\t" ,$dresult,"\t", $gresult;
 }
 
 ?>
