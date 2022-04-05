@@ -29,50 +29,50 @@
             </select>
         </div>
        
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+        <form action="processing.php" method="POST">
             <div class="row">
                 <div class="col-md-4">
                     <h4>EQUITY</h4>
                     <div class="form-group">
-                        <label for="inputAllocate">ALLOCATE</label>
+                        <label for="inputeAllocate">ALLOCATE</label>
                         <input type="text" class="form-control"  name="eallocate" placeholder="Enter initial investment amount">     
                     </div>
                     <div class="form-group">
-                        <label for="inputSIP">SIP</label>
+                        <label for="inputeSIP">SIP</label>
                         <input type="text" class="form-control" name="esip" placeholder="Enter monthly SIP payments ">     
                     </div>
                     <div class="form-group">
-                        <label for="inputChange">CHANGE</label>
+                        <label for="inputeChange">CHANGE</label>
                         <input type="text" class="form-control" name="echange" placeholder="Enter monthly rate of change">     
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h4>DEBT</h4>
                     <div class="form-group">
-                        <label for="inputAllocate">ALLOCATE</label>
+                        <label for="inputdAllocate">ALLOCATE</label>
                         <input type="text" class="form-control"  name="dallocate" placeholder="Enter initial investment amount">     
                     </div>
                     <div class="form-group">
-                        <label for="inputSIP">SIP</label>
+                        <label for="inputdSIP">SIP</label>
                         <input type="text" class="form-control" name="dsip" placeholder="Enter monthly SIP payments ">     
                     </div>
                     <div class="form-group">
-                        <label for="inputChange">CHANGE</label>
+                        <label for="inputdChange">CHANGE</label>
                         <input type="text" class="form-control" name="dchange" placeholder="Enter monthly rate of change">     
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h4>GOLD</h4>
                     <div class="form-group">
-                        <label for="inputAllocate">ALLOCATE</label>
+                        <label for="inputgAllocate">ALLOCATE</label>
                         <input type="text" class="form-control"  name="gallocate" placeholder="Enter initial investment amount">     
                     </div>
                     <div class="form-group">
-                        <label for="inputSIP">SIP</label>
+                        <label for="inputgSIP">SIP</label>
                         <input type="text" class="form-control" name="gsip" placeholder="Enter monthly SIP payments ">     
                     </div>
                     <div class="form-group">
-                        <label for="inputChange">CHANGE</label>
+                        <label for="inputgChange">CHANGE</label>
                         <input type="text" class="form-control" name="gchange" placeholder="Enter monthly rate of change">     
                     </div>
                 </div>
@@ -81,22 +81,22 @@
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
           </form>
 <?php
-if(isset($_POST['submit'])){
-    $eallocate=$_POST["eallocate"];
-    $esip=$_POST["esip"];
-    $echange=$_POST["echange"];
-    $dallocate=$_POST["dallocate"];
-    $dsip=$_POST["dsip"];
-    $dchange=$_POST["dchange"];
-    $gallocate=$_POST["gallocate"];
-    $gsip=$_POST["gsip"];
-    $gchange=$_POST["gchange"];
+// if(isset($_POST['submit'])){
+//     $eallocate=$_POST["eallocate"];
+//     $esip=$_POST["esip"];
+//     $echange=$_POST["echange"];
+//     $dallocate=$_POST["dallocate"];
+//     $dsip=$_POST["dsip"];
+//     $dchange=$_POST["dchange"];
+//     $gallocate=$_POST["gallocate"];
+//     $gsip=$_POST["gsip"];
+//     $gchange=$_POST["gchange"];
 
-    $eresult=($eallocate+$esip)*(1+$echange);
-    $dresult=($dallocate+$dsip)*(1+$dchange);
-    $gresult=($gallocate+$gsip)*(1+$gchange);
-    echo "BALANCE: ", $eresult, "\t", $dresult, "\t", $gresult;
-}
+//     $eresult=($eallocate+$esip)*(1+$echange);
+//     $dresult=($dallocate+$dsip)*(1+$dchange);
+//     $gresult=($gallocate+$gsip)*(1+$gchange);
+//     echo "BALANCE: ", $eresult, "\t", $dresult, "\t", $gresult;
+// }
 
 ?>
     </div>
